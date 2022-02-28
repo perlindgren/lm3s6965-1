@@ -23,6 +23,12 @@ pub use cortex_m_rt::interrupt;
 /// Number of bits available in the NVIC for configuring priority
 pub const NVIC_PRIO_BITS: u8 = 3;
 
+/// NVIC_PRIO_BITS available as constant function
+#[no_mangle]
+pub const fn nvic_prio_bits() -> u8 {
+    NVIC_PRIO_BITS
+}
+
 /// Enumeration of all interrupts
 ///
 /// **NOTE**: When compiling this crate for the `thumbv6m-none-eabi` target this enumeration will
