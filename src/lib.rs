@@ -17,7 +17,7 @@
 #![no_std]
 
 pub use self::Interrupt as interrupt;
-use bare_metal::Nr;
+use cortex_m::interrupt::InterruptNumber;
 pub use cortex_m_rt::interrupt;
 
 /// Number of bits available in the NVIC for configuring priority
@@ -116,10 +116,10 @@ pub enum Interrupt {
     HIBERNATION,
 }
 
-unsafe impl Nr for Interrupt {
+unsafe impl InterruptNumber for Interrupt {
     #[inline]
-    fn nr(&self) -> u8 {
-        match *self {
+    fn number(self) -> u16 {
+        match self {
             Interrupt::GPIOA => 0,
             Interrupt::GPIOB => 1,
             Interrupt::GPIOC => 2,

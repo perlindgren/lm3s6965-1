@@ -3,12 +3,10 @@
 > Minimal device crate for the LM3S6965 (Cortex-M3) microcontroller
 
 This device crate only contains interrupt bindings and it's main use case is
-running [Real Time For the Masses][rtfm] (RTFM) programs on QEMU.
+running [Real Time Interrupt-drive Concurrency][rtic] (RTFM) programs on QEMU.
 
-[rtfm]: https://github.com/japaric/cortex-m-rtfm
+[rtic]: https://github.com/rtic-rs
 
-**NOTE**: This crate targets Rust 1.31 so you'll need nightly or beta until that
-version is released.
 
 ## License
 
